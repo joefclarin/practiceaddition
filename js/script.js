@@ -49,3 +49,12 @@ function next_equation() {
 	el_result_message.innerHTML = '';
 	el_answer.focus();
 }
+
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", function() {
+    navigator.serviceWorker
+      .register("/serviceWorker.js")
+      .then(res => console.log("service worker registered"))
+      .catch(err => console.log("service worker not registered", err))
+  })
+}
