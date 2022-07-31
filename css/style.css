@@ -1,20 +1,102 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,700,900&display=swap");
+
 :root {
 
 }
 
+* {
+	box-sizing: border-box;
+	font-family: "Nunito", sans-serif;
+}
+
 html,
 body {
+	background: #D9F8C4;
+	box-sizing: border-box;
 	font-size: 16px;
+	font-family: "Nunito", sans-serif;
 	margin: 0;
 	padding: 0;
 }
 
 .main {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+
+	margin: 0 auto;
+    min-height: 100vh;
+	max-width: 600px;
+	padding: 0 1rem;
+}
+
+.container {
+    display: block;
+    width: 100%;
+}
+
+.header-container {
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    /* border-bottom: 0.125rem solid #5FDD9D; */
+    border-bottom: 0.125rem solid #3e9368;
+}
+
+.logo {
 
 }
 
-.equation {
+.logo a {
+    color: #000000;
+	font-size: 1.2rem;
+    font-weight: 900;
+    text-decoration: none;
+    outline: none;
+}
 
+.menu {
+
+}
+
+.menu-item {
+	background-color: #5FDD9D;
+    border: 0.0625rem solid #5FDD9D;
+    border-radius: 0.2rem;
+    cursor: pointer;
+    font-family: "Nunito", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    opacity: 0.8;
+    outline: none;
+    padding: 0.4rem 0.8rem;
+    transition: 0.3s;
+}
+
+.menu-item:hover {
+	opacity: 1;
+}
+
+.equation-container {
+    background-color: #5FDD9D;
+    border-radius: 1rem;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    text-align: center;
+}
+
+.equation {
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    grid-gap: 2rem;
+    font-weight: 700;
+    font-size: 10rem;
+    line-height: 1em;
 }
 
 .equation span {
@@ -33,10 +115,90 @@ body {
 	
 }
 
-.equation .equals {
-	
+.answer {
+    text-align: center;
+    width: 20rem;
+    height: 10rem;
+    font-size: 8rem;
+    background: transparent;
+    border: 0;
+    border-bottom: 2px solid #000000;
+    outline: none;
 }
 
-.equation .answer {
-	
+.answer::-webkit-outer-spin-button,
+.answer::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.answer[type=number] {
+  -moz-appearance: textfield;
+}
+
+.answer-notification {
+    font-size: 1rem;
+}
+
+.buttons {
+	padding-bottom: 1rem;
+	text-align: center;
+}
+
+.submit,
+.next {
+    background-color: #5FDD9D;
+    border: 0.0625rem solid #5FDD9D;
+    border-radius: 0.5rem;
+    box-shadow: #3e9368 0px 6px 0px;
+    cursor: pointer;
+    font-family: "Nunito", sans-serif;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    outline: none;
+    padding: 1rem 2rem;
+    transition: 0.3s;
+    min-width: 14rem;
+}
+
+.submit:not(:disabled):active,
+.next:not(:disabled):active {
+    transform: translateY(6px);
+    box-shadow: none;
+}
+
+.submit:disabled,
+.next:disabled {
+    cursor: default;
+}
+
+.submit {
+
+}
+
+.next {
+
+}
+
+@media (max-width: 767px) {
+	html,
+	body {
+		font-size: 12px;
+	}
+
+	.equation {
+		font-size: 6rem;
+	}
+
+	.answer {
+	    height: 8rem;
+    	font-size: 6rem;
+	}
+
+	.submit, 
+	.next {
+		font-size: 1.2rem;
+		min-width: 10rem;
+	}
 }

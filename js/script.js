@@ -1,6 +1,7 @@
 const el_first_number = document.querySelector('.first');
 const el_second_number = document.querySelector('.second');
 const el_answer = document.querySelector('.answer');
+const el_answer_notification = document.querySelector('.answer-notification');
 const el_submit_button = document.querySelector('.submit');
 const el_next_button = document.querySelector('.next');
 const el_result_message = document.querySelector('.result-message');
@@ -31,9 +32,14 @@ function process_answer() {
 	if(el_answer.value == '') {
 		return;
 	} else if(result == el_answer.value) {
-		el_result_message.innerHTML = 'correct!';
+		el_answer_notification.innerHTML = 'Correct! Good job!';
+		el_submit_button.disabled = true;
+		el_next_button.disabled = false;
 	} else {
-		el_result_message.innerHTML = 'wrong!';
+		el_answer_notification.innerHTML = 'Oh, no! Correct answer is ' + result + '.';
+		el_submit_button.disabled = true;
+		el_next_button.disabled = false;
+
 	}
 }
 
@@ -46,15 +52,18 @@ function next_equation() {
 	el_first_number.innerHTML = first_digit;
 	el_second_number.innerHTML = second_digit;
 	el_answer.value = '';
-	el_result_message.innerHTML = '';
+	el_answer_notification.innerHTML = 'Type your answer';
 	el_answer.focus();
+	el_next_button.disabled = true;
+	el_submit_button.disabled = false;
 }
 
+
 if ("serviceWorker" in navigator) {
-  window.addEventListener("load", function() {
-    navigator.serviceWorker
-      .register("/serviceWorker.js")
-      .then(res => console.log("service worker registered"))
-      .catch(err => console.log("service worker not registered", err))
-  })
+	window.addEventListener("load", function() {
+		navigator.serviceWorker
+			.register("/serviceWorker.js")
+			.then(res => console.log("service worker registered"))
+			.catch(err => console.log("service worker not registered", err))
+		})
 }

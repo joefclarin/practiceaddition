@@ -7,7 +7,6 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 
 	<link rel="manifest" href="manifest.json" />
-	<!-- ios support -->
 	<link rel="apple-touch-icon" href="images/icons/icon-32x32.png" />
 	<link rel="apple-touch-icon" href="images/icons/icon-48x48.png" />
 	<link rel="apple-touch-icon" href="images/icons/icon-72x72.png" />
@@ -23,16 +22,32 @@
 </head>
 <body>
 	<div class="main">
-		<div class="equation">
-			<span class="first">1</span>
-			<span class="plus"> + </span>
-			<span class="second">1</span>
-			<span class="equals"> = </span>
-			<input class="answer" type="number">
+		<div class="container header-container">
+			<div class="logo">
+				<a href="/">Practice Addition</a>
+			</div>
+			<div class="menu">
+				<button class="menu-item">Settings</button>
+			</div>
 		</div>
-		<button class="submit">Submit</button>
-		<button class="next">Next</button>
-		<div class="result-message">&nbsp;</div>
+		<div class="container equation-container">
+			<div class="equation">
+				<span class="first">1</span>
+				<span class="plus">+</span>
+				<span class="second">1</span>
+			</div>
+			<input class="answer" type="number">
+			<div class="answer-notification">Type your answer</div>
+		</div>
+		<div class="container">
+			<div class="buttons">
+				<button class="submit">Submit</button>
+				<button class="next">Next</button>
+			</div>
+		</div>
+		<div class="container footer-container">
+			<div class=""></div>
+		</div>
 	</div>
 	<script src="js/script.js"></script>
 </body>
